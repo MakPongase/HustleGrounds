@@ -21,6 +21,16 @@ app.use(express.json());
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
 
+app.use((err, req, res, next) => {
+  const statusCode = res.statusCode || 500;
+  const message = err.message || "Internal Server Error";
+  return res.status(statusCode).json({
+    Succcess: false,
+    statusCode,
+    message,
+  });
+});
+
 app.listen(3000, () => {
   console.log("Server aa is running on http://localhost:3000");
 });
