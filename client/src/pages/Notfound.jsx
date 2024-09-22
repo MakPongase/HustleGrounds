@@ -1,10 +1,11 @@
-function Notfound() {
+function NotFound() {
   return (
     <div>
       {" "}
-      <h1> There is no page available here :P </h1>
+      <h1> Link Not Found </h1>
+      <p>The Link that you may have followed or entered may be broken.</p>
     </div>
   );
 }
 
-export default Notfound;
+export default NotFound;

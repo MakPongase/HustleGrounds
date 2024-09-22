@@ -1,0 +1,12 @@
+@import "global-reset.scss";
+@import "variables.scss";
+@import "mixins.scss";
+@import "typography.scss";
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  width: 100%;
+}

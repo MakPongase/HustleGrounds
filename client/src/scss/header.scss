@@ -1,0 +1,67 @@
+@import "variables";
+
+header {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: $white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    img {
+      height: 30px;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      margin: 0 auto;
+
+      li {
+        margin-left: 1rem;
+
+        a {
+          color: $primary-blue;
+          text-decoration: none;
+
+          &:hover {
+            color: rgb(40, 40, 197);
+          }
+        }
+      }
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+
+        li {
+          margin-left: 1rem;
+
+          a {
+            background-color: $primary-blue;
+            color: $white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $hover-blue;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

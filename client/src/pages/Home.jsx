@@ -1,7 +1,8 @@
 function Home() {
   return (
-    <div style={{ backgroundColor: "lightblue" }}>
-      <h1>Its Me Mario :P</h1>
+    <div>
+      <h1>Home</h1>
+      <p>Welcome to the Home page!</p>
     </div>
   );
 }
