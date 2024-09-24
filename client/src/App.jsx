@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -11,10 +11,16 @@ import Header from "./components/Header";
 import "./scss/styles.scss";
 import Footer from "./components/Footer";
 
-function App() {
+function AppContent() {
+  const location = useLocation(); // Hook to get current location
+
+  // Pages that don't need header and footer
+  const noHeaderFooterPages = ["/sign-in", "/sign-up"];
+
   return (
-    <BrowserRouter>
-      <Header />
+    <div>
+      {/* Conditionally render Header and Footer */}
+      {!noHeaderFooterPages.includes(location.pathname) && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -25,7 +31,15 @@ function App() {
         <Route path="/sign-up" element={<Signup />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
+      {!noHeaderFooterPages.includes(location.pathname) && <Footer />}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }
